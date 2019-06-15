@@ -1,4 +1,4 @@
-/* (a.i) Vista com nome dos títulos e nome dos respetivos autores */
+/* (a.i) Vista com nome dos titulos e nome dos respetivos autores */
 go
 create view Titles_Authors (Title, Author_name) as
 	select Title, CONCAT(au_fname,' ',au_lname)
@@ -13,7 +13,7 @@ create view Pubs_Emps as
 	from publishers join employee on publishers.pub_id=employee.pub_id;
 go
 
-/* (a.iii) Vista com nome das lojas e nome dos títulos vendidos nessa loja */
+/* (a.iii) Vista com nome das lojas e nome dos tï¿½tulos vendidos nessa loja */
 go
 create view Stores_Books as
 	select stor_name, title
@@ -54,4 +54,4 @@ insert into Business_Books(title_id, title, [type], pub_id, price, notes) values
 
 -- (d.i) The check option ( where type='business' ) is not respected so teh insert is not successful
 
--- (d.ii & d.iii) The solution is remove the command 'with check option' from the view definition  
+-- (d.ii & d.iii) The solution is to remove the command 'with check option' from the view definition  

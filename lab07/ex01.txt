@@ -1,0 +1,75 @@
+Livro (Titulo_Livro, Nome_Autor, Afiliacao_Autor, Tipo_Livro, Preco, NoPaginas, Editor, Endereco_Editor, Ano_Publicacao)
+
+(a) Não está em nenhuma formal normal (não respeita as condições da 1FN, não respeitando portanto as condições de nenhuma
+das outras), pois, a relação Livro contém um Nested Relation nos atributos (Editor, Endereco_Editor).
+
+(b)
+    - 1FN:
+
+        Livro
+        Titulo_Livro | Nome_Autor | Afiliacao_Autor | Tipo_Livro | Preco | NoPaginas | Editor | Ano_Publicacao
+              |            |                              ^                    ^         ^            ^
+              |            |                              |                    |         |            |
+              -----------------------------------------------------------------------------------------
+                           |              ^               |          ^         |
+                           |              |               |          |         |
+                           ----------------               ----------------------
+
+        Editor
+        Editor | Endereco_Editor
+           |           ^
+           |           |
+           -------------
+
+    
+    - 2FN:
+
+        Livro
+        Titulo_Livro | Nome_Autor | Tipo_Livro | Preco | NoPaginas | Editor | Ano_Publicacao
+              |            |            ^                    ^         ^            ^
+              |            |            |                    |         |            |
+              -----------------------------------------------------------------------
+                                        |          ^         |
+                                        |          |         |
+                                        ---------------------- 
+
+        Editor
+        Editor | Endereco_Editor
+           |           ^
+           |           |
+           -------------
+
+
+        Autor
+        Nome_Autor | Afiliacao_Autor
+           |               ^
+           |               |
+           -----------------
+
+
+    - 3FN:
+
+        Livro
+        Titulo_Livro | Nome_Autor | Tipo_Livro | NoPaginas | Editor | Ano_Publicacao
+              |            |            ^            ^         ^            ^
+              |            |            |            |         |            |
+              ---------------------------------------------------------------
+
+        Editor
+        Editor | Endereco_Editor
+           |           ^
+           |           |
+           -------------
+
+
+        Autor
+        Nome_Autor | Afiliacao_Autor
+           |               ^
+           |               |
+           -----------------
+
+        Preco
+        Tipo_Livro | Preco
+            |          ^
+            |          |
+            ------------
