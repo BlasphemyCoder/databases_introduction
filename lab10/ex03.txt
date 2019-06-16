@@ -1,0 +1,13 @@
+(a)
+
+    (i) create unique clustered index idxEmployeeSsn on Employee (Ssn)
+
+    (ii) create index idxEmployeeName on Employee (Fname, Lname)
+
+    (iii) create index idxEmployeeDept on Employee (Dno)
+
+    (iv) create index idxEmpProj on Works_On (Pno)
+
+    (v) crete index idxEmpDependent on Dependent (Essn)
+
+    (vi) create index idxProjDept on Project (Dnum)
